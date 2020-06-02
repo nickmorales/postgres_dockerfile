@@ -1,5 +1,13 @@
-FROM postgres:11.4
+FROM postgres:12
 
 ENV POSTGRES_PASSWORD=postgres
-    
-ADD sql /docker-entrypoint-initdb.d/
+
+RUN apt-get update -y --allow-unauthenticated
+RUN apt-get upgrade -y
+RUN apt-get install -y git nano
+
+RUN git clone https://github.com/solgenomics/sgn.git
+
+RUN mkdir -p docker-entrypoint-initdb.d
+COPY 01_init-user-db_01.sh /docker-entrypoint-initdb.d/01_init-user-db_01.sh
+COPY 02_load_empty_fixture_sql_02.sh /docker-entrypoint-initdb.d/02_load_empty_fixture_sql_02.sh
