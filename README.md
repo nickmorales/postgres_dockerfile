@@ -1,51 +1,9 @@
-[![Build Status](https://travis-ci.com/solgenomics/postgres_dockerfile.svg?branch=master)](https://travis-ci.com/solgenomics/postgres_dockerfile)
-
 # postgres_dockerfile
-Dockerfile for breeDBase Postgresql instance.  
 
-After the image has completed startup, you will have a base database with all the required schemas and data needed for an instance of Breedbase to connect to it, and run properly.
+- This is an empty database for Breedbase. It is loaded with all the necessary initial data needed for Breedbase.
 
-This image is based on the postgres Docker image (https://hub.docker.com/_/postgres)
+- This Docker image should be started using the Breedbase web Docker compose file [here](https://github.com/nickmorales/breedbase_dockerfile).
 
-### Install docker (on Debian/Ubuntu)
-For installing on Debian/Ubuntu:
+- The database is named `empty_fixture` and is loaded with SQL from [SGN](https://github.com/solgenomics/sgn/blob/master/t/data/fixture/empty_fixture.sql).
 
-```bash
-apt-get install docker-ce
-```
-
-For Mac/Windows: [Docker Desktop](https://www.docker.com/products/docker-desktop)
-
-### Run the container
-To run the image:
-```bash
-docker run -d --name breedbase_db -p 5432:5432 breedbase/pg:latest
-```
-
-Because this image is an extension of the [postgres Docker image](https://hub.docker.com/_/postgres), you can pass in the environment variables defined by that image.  You can also mount the data directory to the host for persistent storage: 
-```
--v /my/own/datadir:/var/lib/postgresql/data
-```
-
-### Logistics
-#### Database
-The database itself is named `breedbase` and contains a number of schemas within it.
-
-#### Default database username/password:
-```
-username: postgres
-password: postgres
-```
-
-### Clone the repo
-```bash
-git clone https://github.com/solgenomics/postgres_dockerfile
-```
-
-### Build the image
-```bash
-docker build -t breedbase/pg:<tag> postgres_dockerfile
-```
-
-Replace `<tag>` with an identifier of your choosing
- 
+- The database has a user named 'janedoe' with password 'secretpw' for easy logging in.
