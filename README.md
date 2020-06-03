@@ -1,4 +1,4 @@
-# postgres_dockerfile
+# Nick's version of the Breedbase PostgreSQL Docker
 
 - This is an empty database for Breedbase. It is loaded with all the necessary initial data needed for Breedbase.
 
