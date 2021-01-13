@@ -1,4 +1,4 @@
-# Nick's version of the Breedbase PostgreSQL Docker v1.7 Released
+# Nick's version of the Breedbase PostgreSQL Docker v3.0 Released
 
 - Please check the [changelog](https://github.com/nickmorales/breedbase_dockerfile/wiki/Changelog) for update information.
 
