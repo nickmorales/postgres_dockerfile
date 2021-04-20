@@ -6,9 +6,7 @@ RUN apt-get update -y --allow-unauthenticated
 RUN apt-get upgrade -y
 RUN apt-get install -y git nano
 
-RUN git clone --branch master --depth 1 https://github.com/nickmorales/sgn.git \
-    && cd sgn \
-    && git checkout master
+ADD repos /
 
 RUN mkdir -p docker-entrypoint-initdb.d
 COPY 01_init-user-db_01.sh /docker-entrypoint-initdb.d/01_init-user-db_01.sh
