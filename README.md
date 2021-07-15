@@ -1,4 +1,4 @@
-# Nick's version of the Breedbase PostgreSQL Docker v3.0 Released
+# Nick's version of the Breedbase PostgreSQL Docker v5.2 Released
 
 - Please check the [changelog](https://github.com/nickmorales/breedbase_dockerfile/wiki/Changelog) for update information.
 
@@ -8,6 +8,6 @@
 
 - This Docker image should be started using the Breedbase web Docker compose file [here](https://github.com/nickmorales/breedbase_dockerfile).
 
-- The database is named `empty_fixture` and is loaded with SQL from [SGN](https://github.com/solgenomics/sgn/blob/master/t/data/fixture/empty_fixture.sql).
+- The database is named `empty_fixture` and is loaded with SQL from [SGN](https://github.com/nickmorales/imagebreed/blob/master/t/data/fixture/empty_fixture.sql).
 
 - The database has a user named 'janedoe' with password 'secretpw' for easy logging in from the user-interface.
